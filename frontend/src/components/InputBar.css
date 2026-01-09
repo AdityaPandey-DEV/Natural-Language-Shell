@@ -1,0 +1,254 @@
+.input-bar {
+  padding: 24px 32px;
+  border-top: 2px solid #222222;
+  background: #000000;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.input-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #0a0a0a;
+  border-radius: 0;
+  padding: 16px 20px;
+  border: 2px solid #222222;
+  transition: all 0.2s ease;
+}
+
+.input-container:focus-within {
+  border-color: #ffffff;
+  box-shadow: none;
+}
+
+.input-prefix {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+  font-weight: 600;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.prefix-symbol {
+  color: #ffffff;
+}
+
+.prefix-dir {
+  color: #888888;
+}
+
+.command-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  padding: 0;
+}
+
+.command-input::placeholder {
+  color: #444444;
+}
+
+.command-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-clear {
+  background: none;
+  border: none;
+  color: #555555;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px 8px;
+  border-radius: 0;
+  transition: all 0.2s ease;
+}
+
+.btn-clear:hover {
+  color: #ffffff;
+  background: transparent;
+}
+
+.input-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.executor-dropdown {
+  padding: 14px 20px;
+  background: transparent;
+  border: 2px solid #222222;
+  border-radius: 0;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+  min-width: 180px;
+}
+
+.executor-dropdown:hover:not(:disabled) {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+  transform: none;
+}
+
+.executor-dropdown:focus {
+  border-color: #ffffff;
+  box-shadow: none;
+}
+
+.executor-dropdown:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.executor-dropdown option {
+  background: #000000;
+  color: #ffffff;
+  padding: 10px;
+}
+
+.btn-voice {
+  width: 56px;
+  height: 56px;
+  border-radius: 0;
+  border: 2px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.2s ease;
+  box-shadow: none;
+}
+
+.btn-voice:hover {
+  transform: none;
+  background: #ffffff;
+  color: #000000;
+  box-shadow: none;
+}
+
+.btn-voice:active {
+  transform: scale(0.95);
+}
+
+.btn-voice.recording {
+  background: #ffffff;
+  color: #000000;
+  animation: pulse-border 1.5s ease-out infinite;
+}
+
+@keyframes pulse-border {
+  0% {
+    border-color: #ffffff;
+  }
+  50% {
+    border-color: #666666;
+  }
+  100% {
+    border-color: #ffffff;
+  }
+}
+
+.recording-indicator {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+}
+
+.btn-voice:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-submit {
+  padding: 16px 32px;
+  border-radius: 0;
+  border: 2px solid #ffffff;
+  background: #ffffff;
+  color: #000000;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-submit:hover:not(:disabled) {
+  transform: none;
+  background: #000000;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.btn-submit:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn-submit:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-icon {
+  font-size: 16px;
+}
+
+.btn-text {
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .input-bar {
+    padding: 16px;
+    flex-direction: column;
+  }
+
+  .input-container {
+    width: 100%;
+  }
+
+  .input-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .btn-submit {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .btn-text {
+    display: none;
+  }
+}
+

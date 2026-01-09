@@ -1,0 +1,51 @@
+{
+  "google_cloud_credentials": "credentials.json",
+  "language_codes": ["hi-IN", "en-US"],
+  "voice_feedback": true,
+  "auto_translate": true,
+  "recording_timeout": 5,
+  "confidence_threshold": 0.7,
+  "supported_commands": {
+    "hindi": [
+      "फोल्डर खोलो",
+      "फोल्डर दिखाओ", 
+      "वर्तमान फोल्डर",
+      "ऊपर जाओ",
+      "घर जाओ",
+      "बाहर निकलो",
+      "फाइल बनाओ",
+      "फोल्डर बनाओ",
+      "सिस्टम जानकारी",
+      "मेमोरी दिखाओ",
+      "गिट स्टेटस",
+      "इंटरनेट जांचो"
+    ],
+    "english": [
+      "list files",
+      "show directory",
+      "current directory",
+      "go up",
+      "go home",
+      "exit",
+      "create file",
+      "create folder",
+      "system info",
+      "show memory",
+      "git status",
+      "check internet"
+    ]
+  },
+  "voice_settings": {
+    "sample_rate": 16000,
+    "channels": 1,
+    "chunk_size": 1024,
+    "recording_duration": 5
+  },
+  "feedback_messages": {
+    "success": "Command executed successfully",
+    "error": "Command failed",
+    "listening": "Listening...",
+    "processing": "Processing...",
+    "goodbye": "Goodbye! See you later!"
+  }
+}

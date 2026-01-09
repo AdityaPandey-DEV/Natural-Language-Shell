@@ -1,0 +1,76 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+.pytest_cache/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.js
+build/
+
+# Build artifacts
+dist/
+*.o
+*.out
+mini-bash
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment variables
+.env
+.env.local
+backend/.env
+frontend/.env
+
+# API Keys and credentials
+credentials.json
+*_credentials.json
+
+# Logs
+*.log
+logs/
+backend.log
+frontend.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Audio files
+temp_audio*.wav
+feedback.mp3
+*.wav
+
+# Testing
+coverage/
+.nyc_output/
+
+# History
+.history
+backend/.history
+
+# Process IDs
+*.pid
+backend.pid
+frontend.pid
+
+# Misc
+*.bak
+*.tmp
+test_integration.sh
