@@ -1,7 +1,7 @@
 # Advanced Mini Bash Shell Makefile
 
 CC = gcc
-CFLAGS = -Wall -Wextra -std=c99 -g -O2
+CFLAGS = -Wall -Wextra -std=gnu99 -g -O2
 LDFLAGS = 
 TARGET = mini-bash
 HEADERS_DIR = headers
