@@ -1,0 +1,27 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Binary
+        run: |
+          make release
+          # Verify binary exists
+          ls -l mini-bash
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: mini-bash
+          generate_release_notes: true

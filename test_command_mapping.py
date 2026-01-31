@@ -33,5 +33,5 @@ print("\n" + "=" * 60)
 print("✅ Command mapping test complete!")
 
 # Close shell bridge
-shell_bridge.close()
+shell_bridge.stop_shell()
 

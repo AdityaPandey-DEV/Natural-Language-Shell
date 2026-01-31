@@ -1,6 +1,9 @@
 # Natural Language Shell Interface
 **AI-Assisted Command Translation & Execution System**
 
+![CI](https://github.com/AdityaPandey-DEV/Natural-Language-Shell/actions/workflows/ci.yml/badge.svg)
+![Release](https://img.shields.io/github/v/release/AdityaPandey-DEV/Natural-Language-Shell)
+
 A system-level application that enables users to interact with a Unix/Linux terminal using natural language. The system translates user instructions into executable shell commands using AI, executes them via a custom C-based shell, and streams results in real time through a web interface.
 
 ---
