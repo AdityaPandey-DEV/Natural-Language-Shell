@@ -1,133 +1,62 @@
-# Natural Language Shell Interface
-**AI-Assisted Command Translation & Execution System**
+# Natural Language Shell
 
-![CI](https://github.com/AdityaPandey-DEV/Natural-Language-Shell/actions/workflows/ci.yml/badge.svg)
-![Release](https://img.shields.io/github/v/release/AdityaPandey-DEV/Natural-Language-Shell)
+**AI-powered terminal — type plain English, execute Unix commands. Custom C shell + Gemini AI translation with real-time web UI.**
 
-A system-level application that enables users to interact with a Unix/Linux terminal using natural language. The system translates user instructions into executable shell commands using AI, executes them via a custom C-based shell, and streams results in real time through a web interface.
-
----
-
-## 📌 Overview
-
-Natural Language Shell Interface combines **Operating Systems fundamentals**, **shell programming**, and **AI-assisted command processing** to simplify terminal usage while preserving execution reliability and system-level control.
-
-This project demonstrates:
-- Custom shell implementation in **C**
-- Process execution and command parsing
-- Client–server architecture with real-time communication
-- Practical application of AI in systems software
+![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+[![CI](https://img.shields.io/badge/CI-Passing-brightgreen?style=flat-square)]()
 
 ---
 
-## ✨ Features
+## What It Does
 
-### 🖥 Natural Language Command Execution
-- Converts plain English instructions into valid Unix/Linux commands
-- Supports file operations, navigation, search, and system commands
-- Handles **30+ command patterns**
+Converts natural language like *"find all python files modified today"* into the correct shell command, executes it through a custom C-based shell, and streams results in real time via WebSockets.
 
-### ⚙️ Custom Mini-Bash Shell (C)
-- Implements command parsing, execution, and error handling
-- Automatic fallback to native system shell for unsupported commands
-- Ensures reliable execution on **Linux/macOS**
+**Technical Highlights:**
+- **Custom shell in C** — fork/exec/wait, piping, redirection, job control
+- **AI translation** — Google Gemini converts English → Unix commands (30+ patterns)
+- **Dual execution layer** — custom shell + native fallback for unsupported commands
+- **Real-time streaming** — REST + WebSocket, end-to-end latency < 100ms
+- **System-wide file search** — directory traversal with path resolution
+- **Voice input** — Web Speech API for hands-free operation
 
-### 🔁 Real-Time Execution Pipeline
-- REST APIs for command handling
-- WebSockets for live output streaming
-- End-to-end latency under **100 ms**
-
-### 📂 System-Wide File Search
-- Searches across directories
-- Automatic path resolution
-- Application-aware file opening (e.g., VS Code)
-
-### 🎙 Optional Voice Input
-- Browser-based speech recognition
-- Hands-free command execution
-- Asynchronous execution handling
-
----
-
-## 🏗 Architecture
-
-The system follows a modular **client–server architecture** with a dual execution layer to ensure reliability and OS-level control.
+## Architecture
 
 ```
-Frontend (React)
-│
-├── Natural Language Input
-├── Terminal UI
-├── WebSocket Client
-│
-└── REST / WebSocket APIs
-        ↓
-Backend (Python / Flask)
-│
-├── AI Command Translation (Google Gemini)
-├── Command Dispatcher & Validation
-├── System-Wide File Search Engine
-├── Execution Controller
-│
-└── Dual Execution Layer
-        ├── Custom Mini-Bash (C)
-        └── Native System Shell (Linux / macOS)
+React (Terminal UI + Voice) → Flask API → Gemini AI (command translation)
+                                              → Custom C Shell (fork/exec)
+                                              → Fallback: Native System Shell
+                              ← WebSocket (live output stream)
 ```
 
----
+## Tech Stack
 
-## ⚙️ Backend Setup
+| Component | Technology |
+|---|---|
+| Shell | C (process mgmt, pipes, redirection) |
+| Backend | Python, Flask, Google Gemini API |
+| Frontend | React + WebSocket |
+| Voice | Web Speech API |
 
-### Prerequisites
-- Python 3.8+
-- pip
-- Linux or macOS
+## My Role
 
-### Setup
-```bash
-cd backend
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
+I designed the dual-execution architecture, built the C shell's process management model, planned the command translation pipeline, and chose WebSockets for real-time output. Code generation was accelerated using AI tools; systems architecture and process lifecycle management are mine.
 
-Create `.env` file:
-```env
-GEMINI_API_KEY=your_api_key_here
-FLASK_ENV=development
-FLASK_DEBUG=True
-PORT=5002
-CORS_ORIGINS=http://localhost:3000
-```
-
-Run backend:
-```bash
-python app.py
-```
-
----
-
-## 🎨 Frontend Setup
+## Quick Start
 
 ```bash
-cd frontend
-npm install
-npm start
-```
-
-Open:
-```
-http://localhost:3000
+git clone https://github.com/AdityaPandey-DEV/Natural-Language-Shell.git && cd Natural-Language-Shell
+make                              # Build C shell
+pip install -r requirements.txt   # Python deps
+python shell_bridge.py            # Start backend
+cd frontend && npm install && npm run dev   # Start UI
 ```
 
 ---
 
-## 📄 License
-MIT License
+<div align="center">
 
----
+*Architected & built by [Aditya Pandey](https://github.com/AdityaPandey-DEV) — AI-augmented development*
 
-## 👤 Author
-Aditya Pandey  
-Computer Science Undergraduate  
-Focus: Operating Systems, Systems Programming, Scalable Software Engineering
+</div>
